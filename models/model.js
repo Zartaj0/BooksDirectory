@@ -2,7 +2,7 @@ const mongoose = require('mongoose');
 
 
 
- const url = 'mongodb+srv://zartaj:zartaj@cluster0.2isjv.mongodb.net/BooksDirectory?retryWrites=true&w=majority'
+ const url = 'mongodb+srv://zartaj:[password]@cluster0.2isjv.mongodb.net/BooksDirectory?retryWrites=true&w=majority'
 const connection = mongoose.connect(url)
     .then(()=>{console.log('connected to db');})
 
