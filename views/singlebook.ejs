@@ -1,0 +1,33 @@
+<%- include("./partials/head.ejs") %>
+
+  <%- include("./partials/nav.ejs") %>
+
+    <div class="details content">
+      <h2>
+        <%=book.name%>
+      </h2>
+      <div class="content">
+        <p>
+          <%=book.authorName%>
+       
+        </p>
+      </div>
+      <a class="edit" href="/edit/<%=book._id%>">EDIT</a>
+      <a class="delete" data-doc="<%= book._id%>"> <img src="\trashcan.svg" alt="delete icon"> </a>
+    </div>
+
+    <script>
+      const trashcan = document.querySelector('a.delete');
+
+      trashcan.addEventListener('click', (e) => {
+        const endpoint = `/book/${trashcan.dataset.doc}`;
+        fetch(endpoint, {
+          method: 'DELETE',
+        })
+          .then(response => response.json())
+          .then(data => window.location.href = data.redirect)
+      })
+
+    </script>
+
+    <%- include("./partials/foot.ejs") %>

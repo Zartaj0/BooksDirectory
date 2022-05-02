@@ -1,0 +1,17 @@
+<%- include("./partials/head.ejs") %>
+
+<%- include("./partials/nav.ejs") %>
+
+    <div class="update-book content">
+        <form action="/edit/<%=book._id%>" method="post">
+          <input type="hidden" name="_method" value="PUT">
+          <label for="name">Book name:</label>
+          <input type="text" id="name" name="name" >
+          
+          <label for="authorName">authorName:</label>
+          <input id="authorName" name="authorName" >
+          <button>Submit</button>
+        </form>
+      </div>
+
+      <%- include("./partials/foot.ejs") %>

@@ -1,0 +1,25 @@
+<%- include("./partials/head.ejs") %>
+<div class="blogs content">
+  
+  <%- include("./partials/nav.ejs") %>
+
+  <% if (books.length > 0) { %>
+    <% books.forEach(books => { %>
+      <a class="single" href="/book/<%=books._id%>">
+      <h3 class="title"><%= books.name%></h3>
+      <p class="snippet"><%= books.authorName %></p>
+      </a>
+
+    <% }) %>
+  <% } else { %>
+    <p>There are no blogs to display...</p>
+  <% } %>
+
+</div>
+
+
+
+
+
+                <%- include("./partials/head.ejs") %>
+
